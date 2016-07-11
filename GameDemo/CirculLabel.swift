@@ -12,7 +12,7 @@ class CirculLabel: UILabel {
 
     override func awakeFromNib() {
         layer.cornerRadius = 50
-        layer.borderWidth = 10
+        layer.borderWidth = 8
         layer.borderColor = ORANGE_COLOR.CGColor
     }
 

@@ -8,19 +8,10 @@
 
 import UIKit
 import SpriteKit
-extension Double {
-    var degreesToRadians : CGFloat {
-        return CGFloat(self) * CGFloat(M_PI) / 180.0
-    }
-}
-
-extension NSTimeInterval {
-    var time:String {
-        return String(format:"%02d:%02d", Int(self/60.0),  Int(ceil(self%60)) )
-    }
-}
 
 class GameTimerViewController: UIViewController {
+    
+    @IBOutlet weak var taskLbl: UILabel!
     
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
@@ -39,6 +30,7 @@ class GameTimerViewController: UIViewController {
         bgShapeLayer.lineWidth = 8
         view.layer.addSublayer(bgShapeLayer)
     }
+    
     func drawTimeLeftShape() {
         timeLeftShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x: view.frame.width/2 , y: 90.0), radius:
             50, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).CGPath
@@ -47,13 +39,13 @@ class GameTimerViewController: UIViewController {
         timeLeftShapeLayer.lineWidth = 8
         view.layer.addSublayer(timeLeftShapeLayer)
     }
+    
     func addTimeLabel() {
         timeLabel = UILabel(frame: CGRectMake(view.frame.midX-50 , 65.0, 100, 50))
         timeLabel.textAlignment = .Center
         timeLabel.text = timeLeft.time
         view.addSubview(timeLabel)
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,11 +67,7 @@ class GameTimerViewController: UIViewController {
         endTime = NSDate().dateByAddingTimeInterval(timeLeft)
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(GameTimerViewController.updateTime), userInfo: nil, repeats: true)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     func updateTime() {
         if timeLeft > 0 {
             timeLeft = endTime.timeIntervalSinceNow
@@ -88,8 +76,28 @@ class GameTimerViewController: UIViewController {
             timeLabel.text = "00:00"
             timer.invalidate()
         }
-
     }
     
+    @IBAction func wrongAnswerBtnPrssd(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func rightAnswerBtnPrssed(sender: AnyObject) {
+        
+    }
+    
+}
+
+
+extension Double {
+    var degreesToRadians : CGFloat {
+        return CGFloat(self) * CGFloat(M_PI) / 180.0
+    }
+}
+
+extension NSTimeInterval {
+    var time:String {
+        return String(format:"%02d:%02d", Int(self/60.0),  Int(ceil(self%60)) )
+    }
 }
 

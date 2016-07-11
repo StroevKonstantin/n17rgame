@@ -14,7 +14,7 @@ class SubmitButton: UIButton {
         layer.cornerRadius = 10
         layer.borderWidth = 3
         layer.borderColor = UIColor.whiteColor().CGColor
-        layer.backgroundColor = UIColor(red: 255.0/255.0, green: 169.0/255.0, blue: 0.0/255.0, alpha: 1.0).CGColor
+        layer.backgroundColor = ORANGE_COLOR.CGColor
     }
     
 }

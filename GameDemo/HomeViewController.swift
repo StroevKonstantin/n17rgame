@@ -19,7 +19,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
