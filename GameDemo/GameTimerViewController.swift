@@ -25,6 +25,10 @@ class GameTimerViewController: UIViewController {
     // here you create your basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     
+    let string:String = "Скачай уже этот файл!!!"
+      let strsing:String = "Скачай уже !!!"
+    
+    
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x:  view.frame.width/2 , y: 90.0), radius:
             50, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).CGPath
