@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0832FA811D34CCE000131D33 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832FA801D34CCE000131D33 /* PageContentViewController.swift */; };
 		083702581D2F80070052CFEC /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083702531D2F80070052CFEC /* PopUpViewController_iPad.xib */; };
 		083702591D2F80070052CFEC /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083702541D2F80070052CFEC /* PopUpViewController_iPhone6.xib */; };
 		0837025A1D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083702551D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0832FA801D34CCE000131D33 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		083702531D2F80070052CFEC /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		083702541D2F80070052CFEC /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
 		083702551D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				0841F2D61D2E378300C298F2 /* ShakeMeViewController.swift */,
 				0841F2D81D2E3BCD00C298F2 /* TaskViewController.swift */,
 				083702631D2FA9E10052CFEC /* GameTimerViewController.swift */,
+				0832FA801D34CCE000131D33 /* PageContentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				0837025C1D2F80070052CFEC /* PopUpViewControllerSwift.swift in Sources */,
 				B52D672D1D33B73A00ABCCDF /* Constants.swift in Sources */,
 				B52D672F1D33BED900ABCCDF /* NoButton.swift in Sources */,
+				0832FA811D34CCE000131D33 /* PageContentViewController.swift in Sources */,
 				0841F2D71D2E378300C298F2 /* ShakeMeViewController.swift in Sources */,
 				083702641D2FA9E10052CFEC /* GameTimerViewController.swift in Sources */,
 				0841F2D51D2E34D800C298F2 /* DOFavoriteButton.swift in Sources */,
