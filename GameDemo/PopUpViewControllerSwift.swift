@@ -13,15 +13,20 @@ import QuartzCore
     
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
+    
+    var storage:Storage = Storage.sharedInstance
    
     @IBAction func plusButtonPressed(sender: UIButton) {
         let longer = Int(messageLabel.text!)
-        messageLabel.text = String(longer!+1)
+        messageLabel.text = String(longer!+15)
+        
     }
     
     @IBAction func minusButtonPressed(sender: UIButton) {
         let longer = Int(messageLabel.text!)
-        messageLabel.text = String(longer!-1)
+        if (longer > 0) {
+            messageLabel.text = String(longer!-15)
+        }
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

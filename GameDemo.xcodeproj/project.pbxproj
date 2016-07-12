@@ -33,6 +33,7 @@
 		B52D672D1D33B73A00ABCCDF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D672C1D33B73A00ABCCDF /* Constants.swift */; };
 		B52D672F1D33BED900ABCCDF /* NoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D672E1D33BED900ABCCDF /* NoButton.swift */; };
 		B52D67311D33BF0200ABCCDF /* YesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D67301D33BF0200ABCCDF /* YesButton.swift */; };
+		B595E9011D34B8B200599B8F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B595E9001D34B8B200599B8F /* Storage.swift */; };
 		B5DE60F41D338068006052BD /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60F31D338068006052BD /* MenuButton.swift */; };
 		B5DE60F61D33861F006052BD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60F51D33861F006052BD /* NavigationBar.swift */; };
 		B5DE60F81D338FB1006052BD /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60F71D338FB1006052BD /* SubmitButton.swift */; };
@@ -90,6 +91,7 @@
 		B52D672C1D33B73A00ABCCDF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B52D672E1D33BED900ABCCDF /* NoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoButton.swift; sourceTree = "<group>"; };
 		B52D67301D33BF0200ABCCDF /* YesButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YesButton.swift; path = Assets.xcassets/YesButton.swift; sourceTree = "<group>"; };
+		B595E9001D34B8B200599B8F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B5DE60F31D338068006052BD /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		B5DE60F51D33861F006052BD /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		B5DE60F71D338FB1006052BD /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				083702611D2FA7D90052CFEC /* Data.swift */,
+				B595E9001D34B8B200599B8F /* Storage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				B5DE60F81D338FB1006052BD /* SubmitButton.swift in Sources */,
 				08A127331D2E2847002AE55A /* ChooseTeamViewController.swift in Sources */,
 				083702621D2FA7D90052CFEC /* Data.swift in Sources */,
+				B595E9011D34B8B200599B8F /* Storage.swift in Sources */,
 				08FC2A791D2B9DC2003007F6 /* RulesViewController.swift in Sources */,
 				B52D67311D33BF0200ABCCDF /* YesButton.swift in Sources */,
 				08CAEB741D2A5C4A0027199F /* GameScene.swift in Sources */,

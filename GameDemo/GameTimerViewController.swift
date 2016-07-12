@@ -13,6 +13,9 @@ class GameTimerViewController: UIViewController {
     
     @IBOutlet weak var taskLbl: UILabel!
     
+    var storage:Storage = Storage.sharedInstance
+    var currentState:Int = 0
+    
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     var timeLeft: NSTimeInterval = 30.0
@@ -50,11 +53,14 @@ class GameTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        storage.words = ["Библиотека", "Смартфон", "Розетка", "Кондиционер", "Монитор"]
+        
         view.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
+        nextWord()
         
         // here you define the fromValue, toValue and duration of your animation
         strokeIt.fromValue = 0.0
@@ -79,10 +85,17 @@ class GameTimerViewController: UIViewController {
     }
     
     @IBAction func wrongAnswerBtnPrssd(sender: AnyObject) {
-        
+        nextWord()
     }
     
     @IBAction func rightAnswerBtnPrssed(sender: AnyObject) {
+        nextWord()
+    }
+    
+    func nextWord(){
+        
+        taskLbl.text = storage.words[currentState]
+        currentState += 1
         
     }
     
