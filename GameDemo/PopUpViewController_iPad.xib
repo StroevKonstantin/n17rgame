@@ -20,39 +20,83 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYT-D9-Z5J">
                     <rect key="frame" x="190" y="287" width="389" height="449"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ple-bp-UYe">
-                            <rect key="frame" x="111" y="379" width="166" height="30"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="aws-3z-ufM">
+                            <rect key="frame" x="85" y="175" width="220" height="100"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYv-1J-B9x">
+                                    <rect key="frame" x="0.0" y="26" width="30" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <state key="normal" title="-">
+                                        <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="zzP-bh-DHM" customClass="CirculLabel" customModule="GameDemo" customModuleProvider="target">
+                                    <rect key="frame" x="60" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="VXy-dj-2eJ"/>
+                                        <constraint firstAttribute="height" constant="100" id="wqK-3i-7kc"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5us-It-8T2">
+                                    <rect key="frame" x="190" y="26" width="30" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <state key="normal" title="+">
+                                        <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ple-bp-UYe" customClass="SubmitButton" customModule="GameDemo" customModuleProvider="target">
+                            <rect key="frame" x="50" y="349" width="289" height="60"/>
+                            <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="AVp-AL-fTV"/>
-                                <constraint firstAttribute="width" constant="166" id="psK-Xs-V1a"/>
+                                <constraint firstAttribute="height" constant="60" id="AVp-AL-fTV"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" title="Save">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                            <state key="normal" title="Подтвердить">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="closePopup:" destination="-1" eventType="touchUpInside" id="ROG-kC-NZA"/>
                             </connections>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="zzP-bh-DHM">
-                            <rect key="frame" x="92" y="199" width="205" height="103"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Длительность ответа" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMm-fr-icM">
+                            <rect key="frame" x="87" y="55" width="215" height="78"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="215" id="2lx-yf-bmv"/>
+                                <constraint firstAttribute="height" constant="78" id="dDe-bc-jC6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                            <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5us-It-8T2">
-                            <rect key="frame" x="305" y="236" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYv-1J-B9x">
-                            <rect key="frame" x="27" y="245" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nD-bR-w6O">
+                            <rect key="frame" x="351" y="8" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="1J6-uZ-2xp"/>
+                                <constraint firstAttribute="height" constant="30" id="bPI-OK-S5o"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                            <state key="normal" title="X">
+                                <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="Ple-bp-UYe" firstAttribute="leading" secondItem="cYT-D9-Z5J" secondAttribute="leading" constant="50" id="3Ys-uc-sEB"/>
+                        <constraint firstItem="XMm-fr-icM" firstAttribute="top" secondItem="cYT-D9-Z5J" secondAttribute="top" constant="55" id="4Je-6C-ZDn"/>
+                        <constraint firstAttribute="trailing" secondItem="Ple-bp-UYe" secondAttribute="trailing" constant="50" id="FXE-X3-Ddu"/>
+                        <constraint firstItem="aws-3z-ufM" firstAttribute="centerY" secondItem="cYT-D9-Z5J" secondAttribute="centerY" id="X2y-7H-WUP"/>
+                        <constraint firstAttribute="trailing" secondItem="2nD-bR-w6O" secondAttribute="trailing" constant="8" id="Y22-e0-dob"/>
                         <constraint firstAttribute="bottom" secondItem="Ple-bp-UYe" secondAttribute="bottom" constant="40" id="jam-1d-aCo"/>
                         <constraint firstItem="Ple-bp-UYe" firstAttribute="centerX" secondItem="cYT-D9-Z5J" secondAttribute="centerX" id="pWk-a1-Nos"/>
+                        <constraint firstItem="aws-3z-ufM" firstAttribute="centerX" secondItem="cYT-D9-Z5J" secondAttribute="centerX" id="plF-UI-rAV"/>
+                        <constraint firstItem="XMm-fr-icM" firstAttribute="centerX" secondItem="cYT-D9-Z5J" secondAttribute="centerX" id="uRi-am-mlV"/>
+                        <constraint firstItem="2nD-bR-w6O" firstAttribute="top" secondItem="cYT-D9-Z5J" secondAttribute="top" constant="8" id="xie-MA-eOs"/>
                     </constraints>
                 </view>
             </subviews>
