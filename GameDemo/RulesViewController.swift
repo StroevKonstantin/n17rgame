@@ -21,6 +21,12 @@ class RulesViewController: UIPageViewController,UIPageViewControllerDataSource{
         self.pageTitles = NSArray(objects: "Explore", "Today Widget")
         self.pageImages = NSArray(objects: "page1", "page2")
         
+<<<<<<< HEAD
+        
+        let pageWidth:CGFloat = CGRectGetWidth(self.scrollView.frame)
+        let maxWidth:CGFloat = pageWidth * 4
+        let contentOffset:CGFloat = self.scrollView.contentOffset.x
+=======
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         
@@ -34,6 +40,7 @@ class RulesViewController: UIPageViewController,UIPageViewControllerDataSource{
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
+>>>>>>> master
         
         
     }
