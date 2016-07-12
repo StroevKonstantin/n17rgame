@@ -49,7 +49,7 @@ class RulesViewController: UIViewController, UIScrollViewDelegate {
     }
     func moveToNextPage (){
         
-        // Move to next page
+        
         let pageWidth:CGFloat = CGRectGetWidth(self.scrollView.frame)
         let maxWidth:CGFloat = pageWidth * 4
         let contentOffset:CGFloat = self.scrollView.contentOffset.x
