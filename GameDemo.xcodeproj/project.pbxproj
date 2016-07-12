@@ -39,6 +39,8 @@
 		B5DE60F61D33861F006052BD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60F51D33861F006052BD /* NavigationBar.swift */; };
 		B5DE60F81D338FB1006052BD /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60F71D338FB1006052BD /* SubmitButton.swift */; };
 		B5DE60FC1D33B550006052BD /* CirculLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60FB1D33B550006052BD /* CirculLabel.swift */; };
+		B5F8266D1D359449007F3CB2 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = B5F8266C1D359449007F3CB2 /* words.json */; };
+		B5F8266F1D359CDC007F3CB2 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = B5F8266E1D359CDC007F3CB2 /* categories.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		B5DE60F51D33861F006052BD /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		B5DE60F71D338FB1006052BD /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		B5DE60FB1D33B550006052BD /* CirculLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirculLabel.swift; sourceTree = "<group>"; };
+		B5F8266C1D359449007F3CB2 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		B5F8266E1D359CDC007F3CB2 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		E8A92E732CC7DE8AA41E384E /* Pods_GameDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +191,8 @@
 		08CAEB6E1D2A5C4A0027199F /* GameDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B5F8266E1D359CDC007F3CB2 /* categories.json */,
+				B5F8266C1D359449007F3CB2 /* words.json */,
 				B5DE60FA1D33AC96006052BD /* Board */,
 				0841F2DA1D2E589500C298F2 /* Model */,
 				0810043D1D2BC7530098DB5D /* View */,
@@ -381,6 +387,8 @@
 			files = (
 				083702581D2F80070052CFEC /* PopUpViewController_iPad.xib in Resources */,
 				08CAEB721D2A5C4A0027199F /* GameScene.sks in Resources */,
+				B5F8266D1D359449007F3CB2 /* words.json in Resources */,
+				B5F8266F1D359CDC007F3CB2 /* categories.json in Resources */,
 				08CAEB7E1D2A5C4A0027199F /* LaunchScreen.storyboard in Resources */,
 				0837025B1D2F80070052CFEC /* PopUpViewController.xib in Resources */,
 				0837025A1D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib in Resources */,
