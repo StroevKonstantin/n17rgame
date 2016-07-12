@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 
-class Category: Object {
+class Cat: Object {
     dynamic var object_id = 0
     dynamic var name = " "
     dynamic var descrypt = " "
@@ -18,16 +18,18 @@ class Category: Object {
 }
 
 // Words model
-class Word: Object {
+class W: Object {
     dynamic var word_id = 0
-    dynamic var category :Category?
+    dynamic var category :Cat?
     dynamic var priority = 0
     dynamic var word = " "
     
     
 }
 //Team model
-class Team: Object {
+class T: Object {
     dynamic var team_id = 0
     dynamic var result = 0
+    
+    
 }

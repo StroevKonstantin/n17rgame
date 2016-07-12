@@ -30,10 +30,14 @@ class ShakeMeViewController: UIViewController {
           let rlms = realm.objects(Teams)
         print(rlms)
  */
-//        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL)
  
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     lazy var motionManager: CMMotionManager = {
         return CMMotionManager()

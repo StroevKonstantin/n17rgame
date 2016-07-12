@@ -13,20 +13,15 @@ import QuartzCore
     
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
-    
-    var storage:Storage = Storage.sharedInstance
    
     @IBAction func plusButtonPressed(sender: UIButton) {
-        let longer = Int(messageLabel.text!)
-        messageLabel.text = String(longer!+15)
-        
+        var longer = Int(messageLabel.text!)
+        messageLabel.text = String(longer!+1)
     }
     
     @IBAction func minusButtonPressed(sender: UIButton) {
-        let longer = Int(messageLabel.text!)
-        if (longer > 0) {
-            messageLabel.text = String(longer!-15)
-        }
+        var longer = Int(messageLabel.text!)
+        messageLabel.text = String(longer!-1)
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -38,8 +33,8 @@ import QuartzCore
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
-        self.popUpView.layer.cornerRadius = 15
+        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
+        self.popUpView.layer.cornerRadius = 5
         self.popUpView.layer.shadowOpacity = 0.8
         self.popUpView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
     }

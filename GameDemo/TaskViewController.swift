@@ -11,9 +11,6 @@ import Realm
 import RealmSwift
 
 class TaskViewController: UIViewController {
-    
-    @IBOutlet weak var categoryTaskLbl: UILabel!
-    @IBOutlet weak var taskDescriptionLbl: UILabel!
 
     @IBAction func startButtonPressed(sender: UIButton) {
         
