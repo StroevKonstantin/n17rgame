@@ -9,21 +9,17 @@
 
 import UIKit
 
-
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var rulesButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var startGameButton: UIButton!
+    
+    var popViewController : PopUpViewControllerSwift!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-       
-        
-   
     }
-    var popViewController : PopUpViewControllerSwift!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,10 +33,10 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     @IBAction func settingsButtonPressed(sender: AnyObject) {
         let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
+        
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
         {
             self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
@@ -65,8 +61,8 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func rulesButtonPressed(sender: UIButton) {
-        
         let r:RulesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RulesViewController") as! RulesViewController;
         
         self.navigationController?.pushViewController(r, animated: true)
@@ -78,14 +74,16 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(f, animated: true)
         
     }
-    func setRoundedBorder(radius : CGFloat, withBorderWidth borderWidth: CGFloat, withColor color : UIColor, forButton button : UIButton)
-    {
-        let l : CALayer = button.layer
-        l.masksToBounds = true
-        l.cornerRadius = radius
-        l.borderWidth = borderWidth
-        l.borderColor = color.CGColor
-    }
+    
+    
+    
+//    func setRoundedBorder(radius : CGFloat, withBorderWidth borderWidth: CGFloat, withColor color : UIColor, forButton button : UIButton) {
+//        let l : CALayer = button.layer
+//        l.masksToBounds = true
+//        l.cornerRadius = radius
+//        l.borderWidth = borderWidth
+//        l.borderColor = color.CGColor
+//    }
 
 
 }
