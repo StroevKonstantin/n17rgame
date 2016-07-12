@@ -27,6 +27,7 @@ class GameTimerViewController: UIViewController {
     
     let string:String = "Скачай уже это Aliya!!!"
     let aliya:String = "olololo"
+    let kostya:String = "lololol"
     
     
     func drawBgShape() {
