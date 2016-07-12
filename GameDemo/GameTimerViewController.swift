@@ -26,6 +26,8 @@ class GameTimerViewController: UIViewController {
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     
     let string:String = "Скачай уже это Aliya!!!"
+    let aliya:String = "olololo"
+    
     
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x:  view.frame.width/2 , y: 90.0), radius:
