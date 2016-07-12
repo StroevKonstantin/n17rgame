@@ -22,7 +22,7 @@ class PageContentViewController: UIViewController {
         
         self.imageView.image = UIImage(named: imageFile)
         self.lblTitle.text = self.titleText
-        self.lblTitle.alpha = 0.1
+      
        
         
     }
