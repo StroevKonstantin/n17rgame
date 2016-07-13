@@ -12,6 +12,7 @@ import RealmSwift
 
 class TaskViewController: UIViewController {
     
+    let str = " "
     @IBOutlet weak var categoryTaskLbl: UILabel!
     @IBOutlet weak var taskDescriptionLbl: UILabel!
 
