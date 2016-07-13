@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var startGameButton: UIButton!
     
     var popViewController : PopUpViewControllerSwift!
+    var aliusha:String = "!!!"
     
     override func viewDidLoad() {
         super.viewDidLoad()
