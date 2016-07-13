@@ -24,6 +24,7 @@ class GameTimerViewController: UIViewController {
     // here you create your basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     
+    private var timerStartedAnimating = false
     
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x:  view.frame.width/2 , y: 90.0), radius:
@@ -61,6 +62,13 @@ class GameTimerViewController: UIViewController {
         drawTimeLeftShape()
         addTimeLabel()
         nextWord()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if timerStartedAnimating { return }
+        timerStartedAnimating = true
         
         // here you define the fromValue, toValue and duration of your animation
         strokeIt.fromValue = 0.0
