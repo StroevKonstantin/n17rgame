@@ -12,30 +12,33 @@ import RealmSwift
 
 class TaskViewController: UIViewController {
     
-    let str = " "
     @IBOutlet weak var categoryTaskLbl: UILabel!
     @IBOutlet weak var taskDescriptionLbl: UILabel!
-
-    @IBAction func startButtonPressed(sender: UIButton) {
-        
-        let f:GameTimerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameTimerViewController") as! GameTimerViewController;
-        
-        self.presentViewController(f, animated: true, completion: nil)
-
-    }
+    
+    var storage:Storage = Storage.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-  
-       
+        
+        showCategoryInfo()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func showCategoryInfo(){
+        let realm = try! Realm()
+        
+        let currentCategory = realm.objects(Category.self).filter("id = %@", storage.currentCategory)
+        
+        print("+++++++++++++")
+        print(currentCategory)
+        
+        categoryTaskLbl.text = currentCategory.first?.name
+        taskDescriptionLbl.text = currentCategory.first?.annotation
     }
- 
-   
+    
 
+    @IBAction func startButtonPressed(sender: UIButton) {
+        let f:GameTimerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameTimerViewController") as! GameTimerViewController;
+        self.presentViewController(f, animated: true, completion: nil)
+    }
 }

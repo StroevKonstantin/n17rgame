@@ -74,9 +74,7 @@ class ChooseTeamViewController: UIViewController {
         }
     }
     
-    @IBAction func goToTapped(sender: UIButton) {
-        print("Shake!")
-        
+    @IBAction func goToTapped(sender: UIButton) {        
         let s:ShakeMeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ShakeMeViewController") as! ShakeMeViewController;
         
         self.navigationController?.pushViewController(s, animated: true)

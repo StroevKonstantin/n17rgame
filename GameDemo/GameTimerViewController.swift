@@ -14,7 +14,6 @@ class GameTimerViewController: UIViewController {
     @IBOutlet weak var taskLbl: UILabel!
     
     var storage:Storage = Storage.sharedInstance
-    var currentState:Int = 0
     
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
@@ -25,12 +24,7 @@ class GameTimerViewController: UIViewController {
     // here you create your basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     
-    let string:String = "Скачай уже это Aliya!!!"
-    let aliya:String = "olololo"
-    let kostya:String = "lololol"
-    
     private var timerStartedAnimating = false
-    
     
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x:  view.frame.width/2 , y: 90.0), radius:
@@ -60,7 +54,7 @@ class GameTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storage.words = ["Библиотека", "Смартфон", "Розетка", "Кондиционер", "Монитор"]
+//        storage.words = ["Библиотека", "Смартфон", "Розетка", "Кондиционер", "Монитор"]
         
         view.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         
@@ -108,9 +102,12 @@ class GameTimerViewController: UIViewController {
     
     func nextWord(){
         
-        taskLbl.text = storage.words[currentState]
-        currentState += 1
+        let count = storage.tasks.count
+        let index = Int(arc4random_uniform(UInt32(count))) // change to uniq!
         
+        if storage.tasks[index].category?.id == storage.currentCategory {
+            taskLbl.text = storage.tasks[index].word
+        }
     }
     
     @IBAction func closeButtonPressed(sender: UIButton) {
