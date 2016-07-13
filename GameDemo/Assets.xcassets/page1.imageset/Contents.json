@@ -1,16 +1,12 @@
 {
   "images" : [
     {
-      "idiom" : "universal"
-    },
-    {
       "idiom" : "universal",
       "filename" : "page1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "page1@2x.png",
       "scale" : "2x"
     },
     {

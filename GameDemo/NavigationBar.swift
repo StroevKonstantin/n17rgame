@@ -15,7 +15,7 @@ class NavigationBar: UINavigationController {
         
         navigationBar.barTintColor = ORANGE_COLOR
         navigationBar.barStyle = .Black
-        navigationBar.tintColor = UIColor.whiteColor()
+      self.navigationBar.tintColor = UIColor.whiteColor();
         
 
     }

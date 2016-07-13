@@ -9,22 +9,19 @@
 import UIKit
 
 class PageContentViewController: UIViewController {
-   
     var pageIndex: Int!
     var titleText: String!
     var imageFile: String!
 
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
         
         self.imageView.image = UIImage(named: imageFile)
         self.lblTitle.text = self.titleText
-      
-       
-        
     }
 
     override func didReceiveMemoryWarning() {

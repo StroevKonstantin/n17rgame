@@ -8,6 +8,8 @@
 
 
 import UIKit
+import SwiftyJSON
+import RealmSwift
 
 class HomeViewController: UIViewController {
 
@@ -19,6 +21,44 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fillDataBase()
+    }
+    
+    func fillDataBase(){
+        
+        if let path = NSBundle.mainBundle().pathForResource("words", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                
+//                print("jsonData:\(json)")
+                
+                let category = Category()
+                category.name = "Блиц 10 слов"
+                category.descryption = "1231231"
+                category.points = 2
+                
+                let realm = try! Realm()
+                
+                if let items = json.array {
+                    for item in items {
+                        
+                        let word = Word()
+                        
+                        word.word = item["word"].string!
+                        word.priority = item["priority"].int!
+                        word.category = category
+                        
+                        try! realm.write {
+                            realm.add(word)
+                        }
+                    }
+                }
+                print(Realm.Configuration.defaultConfiguration.fileURL)
+                print(realm.objects(Word.self).filter("priority < 6"))
+                
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

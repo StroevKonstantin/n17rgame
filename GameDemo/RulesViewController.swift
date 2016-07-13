@@ -8,8 +8,7 @@
 
 import UIKit
 
-class RulesViewController: UIPageViewController,UIPageViewControllerDataSource{
- 
+class RulesViewController:UIPageViewController,UIPageViewControllerDataSource {
     var pageViewController: UIPageViewController!
     var pageTitles: NSArray!
     var pageImages: NSArray!
@@ -20,7 +19,7 @@ class RulesViewController: UIPageViewController,UIPageViewControllerDataSource{
         
         self.pageTitles = NSArray(objects: "Explore", "Today Widget")
         self.pageImages = NSArray(objects: "page1", "page2")
-
+        
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         
@@ -34,7 +33,7 @@ class RulesViewController: UIPageViewController,UIPageViewControllerDataSource{
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
-
+        
         
         
     }
@@ -120,7 +119,4 @@ class RulesViewController: UIPageViewController,UIPageViewControllerDataSource{
     {
         return 0
     }
-
-
-
 }

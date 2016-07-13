@@ -25,6 +25,11 @@ class GameTimerViewController: UIViewController {
     // here you create your basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     
+    let string:String = "Скачай уже это Aliya!!!"
+    let aliya:String = "olololo"
+    let kostya:String = "lololol"
+    
+    
     func drawBgShape() {
         bgShapeLayer.path = UIBezierPath(arcCenter: CGPoint(x:  view.frame.width/2 , y: 90.0), radius:
             50, startAngle: -90.degreesToRadians, endAngle: 270.degreesToRadians, clockwise: true).CGPath
@@ -97,6 +102,28 @@ class GameTimerViewController: UIViewController {
         taskLbl.text = storage.words[currentState]
         currentState += 1
         
+    }
+    
+    @IBAction func closeButtonPressed(sender: UIButton) {
+        
+        
+        let alert = UIAlertController(title: "ОСТАНОВИТЬ ИГРУ",
+                                      message: " Вы желаете прекратить игру ",
+                                      preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Остановить", style: UIAlertActionStyle.Default, handler: {
+            action in self.setupGame()
+        }))
+        alert.addAction(UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.Default, handler: {
+            action in self.continueGame()
+        }))
+        presentViewController(alert, animated: true, completion:nil)
+    }
+    func setupGame(){
+     
+        
+    
+    }
+    func continueGame(){
     }
     
 }
