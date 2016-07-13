@@ -13,25 +13,12 @@ import RealmSwift
 class ShakeMeViewController: UIViewController {
 
     @IBOutlet weak var shakeLabel: UILabel!
+    
+    var storage:Storage = Storage.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        /*let realm = try! Realm()
-        try! realm.write() {
-            var team = realm.create(Teams.self,value:["team_id": 0,"result":2])
-          realm.add(team)
-//            realm.delete(Dog)
-            
-      
-            
-        }
-        
-          let rlms = realm.objects(Teams)
-        print(rlms)
- */
-//        print(Realm.Configuration.defaultConfiguration.fileURL)
- 
+        getRandomCategory()
     }
 
     
@@ -79,6 +66,12 @@ class ShakeMeViewController: UIViewController {
         
         self.presentViewController(f, animated: true, completion: nil)
  
+    }
+    
+    func getRandomCategory(){
+        storage.currentCategory = Int(arc4random_uniform(UInt32(2))+1)
+        print("=======================")
+        print(storage.currentCategory)
     }
 
     
