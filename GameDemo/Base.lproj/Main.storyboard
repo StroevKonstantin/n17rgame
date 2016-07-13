@@ -90,7 +90,7 @@
         <!--Page View Controller-->
         <scene sceneID="Kty-Ep-OCR">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="v8T-dK-rzd" customClass="PageViewController" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="v8T-dK-rzd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIa-NZ-HYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="838" y="1600"/>
@@ -733,48 +733,46 @@
             <point key="canvasLocation" x="1488" y="940"/>
         </scene>
         <!--Page Content View Controller-->
-        <scene sceneID="ZoE-8n-iGo">
+        <scene sceneID="ZFZ-jU-2ZS">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="vCe-8c-P8b" customClass="PageContentViewController" customModule="GameDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="WrF-LT-y66" customClass="PageContentViewController" customModule="GameDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HlL-Gn-qBr"/>
-                        <viewControllerLayoutGuide type="bottom" id="qM2-Q6-TvK"/>
+                        <viewControllerLayoutGuide type="top" id="rTi-Bp-Uod"/>
+                        <viewControllerLayoutGuide type="bottom" id="be7-Ow-ILq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LHU-kR-eYO">
+                    <view key="view" contentMode="scaleToFill" id="qP4-PE-BRB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bON-6n-2rT">
-                                <rect key="frame" x="154" y="174" width="302" height="26.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="302" id="DuC-1z-3gs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F1-Wu-aBx">
+                                <rect key="frame" x="40" y="95" width="520" height="22"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tax-kd-AL0">
-                                <rect key="frame" x="149" y="61" width="338" height="477"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="598" id="Ebs-3V-YhF"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2k-YS-O5E">
+                                <rect key="frame" x="124" y="224" width="356" height="325"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bON-6n-2rT" secondAttribute="trailing" constant="144" id="24q-G4-hb3"/>
-                            <constraint firstItem="bON-6n-2rT" firstAttribute="leading" secondItem="LHU-kR-eYO" secondAttribute="leading" constant="154" id="HDB-Qd-CbK"/>
-                            <constraint firstItem="bON-6n-2rT" firstAttribute="top" secondItem="HlL-Gn-qBr" secondAttribute="bottom" constant="154" id="JxO-2X-X2y"/>
+                            <constraint firstItem="k2k-YS-O5E" firstAttribute="leading" secondItem="qP4-PE-BRB" secondAttribute="leadingMargin" constant="104" id="EYK-ld-6Vi"/>
+                            <constraint firstAttribute="trailing" secondItem="7F1-Wu-aBx" secondAttribute="trailing" constant="40" id="V5U-d1-K7l"/>
+                            <constraint firstItem="7F1-Wu-aBx" firstAttribute="leading" secondItem="qP4-PE-BRB" secondAttribute="leading" constant="40" id="aqX-3f-mMg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k2k-YS-O5E" secondAttribute="trailing" constant="100" id="pPi-3p-IQe"/>
+                            <constraint firstItem="7F1-Wu-aBx" firstAttribute="top" secondItem="rTi-Bp-Uod" secondAttribute="bottom" constant="75" id="qWd-6w-glP"/>
+                            <constraint firstItem="be7-Ow-ILq" firstAttribute="top" secondItem="k2k-YS-O5E" secondAttribute="bottom" constant="51" id="vWR-DO-7Hs"/>
+                            <constraint firstItem="k2k-YS-O5E" firstAttribute="top" secondItem="rTi-Bp-Uod" secondAttribute="bottom" constant="204" id="zw2-5d-7d9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="Tax-kd-AL0" id="FIj-fm-Fn8"/>
-                        <outlet property="lblTitle" destination="bON-6n-2rT" id="Zag-BT-66I"/>
+                        <outlet property="imageView" destination="k2k-YS-O5E" id="Een-jM-3h8"/>
+                        <outlet property="lblTitle" destination="7F1-Wu-aBx" id="bYn-wa-dzu"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l8b-I3-QEE" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIN-IL-KsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824" y="2252"/>
+            <point key="canvasLocation" x="1518" y="1609"/>
         </scene>
     </scenes>
     <resources>

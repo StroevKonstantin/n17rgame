@@ -17,8 +17,8 @@ class RulesViewController:UIPageViewController,UIPageViewControllerDataSource {
     {
         super.viewDidLoad()
         
-        self.pageTitles = NSArray(objects: "Explore", "Today Widget")
-        self.pageImages = NSArray(objects: "page1", "page2")
+        self.pageTitles = NSArray(objects: "В настройках вы можете задать себе нужное количество времени для одного ответа","Слова необходимо отгадывать в зависимости от выпавшей вам карты:рисованием,пантомимой или объяснением","В игре предоставлено 15 игровых категорий. Карточки определяются в случайном порядке при встряхивании телефона","Количество ходов определяется очками, указанные в карточке","Побеждает та команда которая пришла на финиш первой")
+        self.pageImages = NSArray(objects: "page1", "page2","page1","page2","page1")
         
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
