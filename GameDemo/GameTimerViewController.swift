@@ -14,8 +14,11 @@ class GameTimerViewController: UIViewController {
     @IBOutlet weak var taskLbl: UILabel!
     
     var storage:Storage = Storage.sharedInstance
+<<<<<<< HEAD
     
     var arrayIndexes:[Int] = []
+=======
+>>>>>>>master
     
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
@@ -56,6 +59,11 @@ class GameTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
+=======
+//        storage.words = ["Библиотека", "Смартфон", "Розетка", "Кондиционер", "Монитор"]
+        
+>>>>>>>master
         view.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         
         drawBgShape()
@@ -103,6 +111,7 @@ class GameTimerViewController: UIViewController {
     func nextWord(){
         
         let count = storage.tasks.count
+<<<<<<< HEAD
         
         for x in 0 ..< count*10 {
             let rand = Int(arc4random_uniform(UInt32(count)))
@@ -116,7 +125,37 @@ class GameTimerViewController: UIViewController {
         }
         
         
+=======let index = Int(arc4random_uniform(UInt32(count))) // change to uniq!
         
+        if storage.tasks[index].category?.id == storage.currentCategory {
+            taskLbl.text = storage.tasks[index].word
+        }
+    }
+    
+    @IBAction func closeButtonPressed(sender: UIButton) {
+        
+        
+        let alert = UIAlertController(title: "ОСТАНОВИТЬ ИГРУ",
+                                      message: " Вы желаете прекратить игру ",
+                                      preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Главное меню", style: UIAlertActionStyle.Default, handler: {
+            action in self.setupGame()
+        }))
+        alert.addAction(UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.Default, handler: {
+            action in self.continueGame()
+        }))
+        presentViewController(alert, animated: true, completion:nil)
+    }
+    func setupGame(){
+       // self.dismissViewControllerAnimated(true, completion: {});
+        let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
+>>>>>>>master
+        
+        self.navigationController?.pushViewController(f, animated: true)
+        
+    
+    }
+    func continueGame(){
     }
     
     @IBAction func closeButtonPressed(sender: UIButton) {

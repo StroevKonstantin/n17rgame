@@ -19,7 +19,11 @@ class PageContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+<<<<<<< HEAD
         let aliya:String = "Stroyeva"
+=======
+     
+>>>>>>>master
         // Do any additional setup after loading the view.
         
         self.imageView.image = UIImage(named: imageFile)
