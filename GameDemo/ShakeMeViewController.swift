@@ -11,14 +11,16 @@ import CoreMotion
 import RealmSwift
 
 class ShakeMeViewController: UIViewController {
-
-    @IBOutlet weak var shakeLabel: UILabel!
+    
+    @IBOutlet weak var teamMoveLbl: UILabel!
+    
+    @IBOutlet weak var resultsLbl: UILabel!
     
     var storage:Storage = Storage.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getRandomCategory()
+        
     }
 
     
@@ -31,13 +33,17 @@ class ShakeMeViewController: UIViewController {
     var handlingShake = false
     
     override func viewWillAppear(animated: Bool) {
+        makeMove()
+        getRandomCategory()
+        showResult()
+        
         handlingShake = false
         motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.currentQueue()!) { [weak self] (motion, error) in
             if
                 let userAcceleration = motion?.userAcceleration,
                 let _self = self {
                 
-                print("\(userAcceleration.x) / \(userAcceleration.y)")
+//                print("\(userAcceleration.x) / \(userAcceleration.y)")
                 
                 if (fabs(userAcceleration.x) > _self.accelerationThreshold
                     || fabs(userAcceleration.y) > _self.accelerationThreshold
@@ -58,6 +64,7 @@ class ShakeMeViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         // or wherever appropriate
         motionManager.stopDeviceMotionUpdates()
+        
     }
     
     func handleShake() {
@@ -65,6 +72,8 @@ class ShakeMeViewController: UIViewController {
         let f:TaskViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewController") as! TaskViewController;
         
         self.presentViewController(f, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(f, animated: true)
+
  
     }
     
@@ -73,6 +82,23 @@ class ShakeMeViewController: UIViewController {
         print("=======================")
         print(storage.currentCategory)
     }
+    
+    func makeMove(){
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                teamMoveLbl.text = "... команды \(team.team_id)"
+            }
+        }
+    }
 
+    func showResult(){
+        var resultString:String = ""
+        
+        for team in storage.activeTeams {
+            resultString = resultString + "\(team.team_id)/ \(team.result); "
+        }
+        
+        resultsLbl.text = resultString
+    }
     
 }

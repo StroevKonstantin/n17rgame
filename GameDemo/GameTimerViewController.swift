@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import RealmSwift
 
 class GameTimerViewController: UIViewController {
     
@@ -16,6 +17,9 @@ class GameTimerViewController: UIViewController {
     var storage:Storage = Storage.sharedInstance
     
     var arrayIndexes:[Int] = []
+    var index:Int = 0
+    
+    var filteredWords:[Word] = []
     
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
@@ -61,6 +65,9 @@ class GameTimerViewController: UIViewController {
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
+        
+        filterWordsByCategory()
+        generateRandomSequence()
         nextWord()
     }
     
@@ -94,33 +101,113 @@ class GameTimerViewController: UIViewController {
     
     @IBAction func wrongAnswerBtnPrssd(sender: AnyObject) {
         nextWord()
+        
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                team.isChangeCategory = false
+            }
+        }
+        
     }
     
     @IBAction func rightAnswerBtnPrssed(sender: AnyObject) {
+        
+        let realm = try! Realm()
+        
+        let currentCategoryPoints = realm.objects(Category.self).filter("id = %@", storage.currentCategory).first?.points
+
+        
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                team.result += currentCategoryPoints!
+                team.isChangeCategory = true
+            }
+        }
+        
         nextWord()
     }
     
-    func nextWord(){
-        
-        let count = storage.tasks.count
+    func generateRandomSequence(){
+        let count = filteredWords.count
         
         for x in 0 ..< count*10 {
             let rand = Int(arc4random_uniform(UInt32(count)))
             if !arrayIndexes.contains(rand){
                 arrayIndexes.append(rand)
-                
-                if storage.tasks[rand].category?.id == storage.currentCategory {
-                    taskLbl.text = storage.tasks[rand].word
-                }
+            }
+        }
+    }
+    
+    func filterWordsByCategory(){
+        
+        for item in storage.tasks {
+            
+//            print("\(storage.currentCategory) || \(item.category!.id)")
+            if item.category?.id == storage.currentCategory {
+                filteredWords.append(item)
             }
         }
         
+//        print(filteredWords)
+    }
+    
+    func nextWord(){
+        
+        if index < 3 {
+            taskLbl.text = filteredWords[arrayIndexes[index]].word
+            index += 1
+        } else {
+            finishRoundForOneTeam()
+        }
+    }
+    
+    func finishRoundForOneTeam(){
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                print(team.result)
+            }
+        }
+        
+        startRoundForNextTeam()
+        
+        self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    var indexW:Int = 0
+
+    
+    func startRoundForNextTeam() {
         
         
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                indexW = storage.activeTeams.indexOf(team)!
+                team.isMove = false
+            }
+        }
+
+        
+        indexW += 1
+        
+        if indexW <= storage.activeTeams.count-1 {
+            storage.activeTeams[indexW].isMove = true
+        } else {
+            storage.numberOFRound += 1
+            indexW = 0
+            
+            for team in storage.activeTeams {
+                team.isMove = false
+            }
+            
+            storage.activeTeams.first?.isMove = true
+        }
+
+        
+        print(storage.activeTeams)
     }
     
     @IBAction func closeButtonPressed(sender: UIButton) {
-        
         
         let alert = UIAlertController(title: "ОСТАНОВИТЬ ИГРУ",
                                       message: " Вы желаете прекратить игру ",
@@ -133,14 +220,13 @@ class GameTimerViewController: UIViewController {
         }))
         presentViewController(alert, animated: true, completion:nil)
     }
+    
     func setupGame(){
-       // self.dismissViewControllerAnimated(true, completion: {});
         let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
         
         self.navigationController?.pushViewController(f, animated: true)
-        
-    
     }
+    
     func continueGame(){
     }
     

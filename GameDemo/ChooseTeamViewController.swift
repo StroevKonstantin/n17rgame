@@ -69,8 +69,6 @@ class ChooseTeamViewController: UIViewController {
         if sender.selected {
             sender.deselect()
             print("Team deselected \(sender.tag)")
-            
-            
         } else {
             sender.select()
             print("Team selected \(sender.tag)")
@@ -79,15 +77,16 @@ class ChooseTeamViewController: UIViewController {
             newTeam.team_id = sender.tag
             storage.activeTeams.append(newTeam)
             
+            storage.activeTeams.first?.isMove = true
+            
+            print(storage.activeTeams)
         }
-        
     }
     
     @IBAction func goToTapped(sender: UIButton) {        
         let s:ShakeMeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ShakeMeViewController") as! ShakeMeViewController;
         
         self.navigationController?.pushViewController(s, animated: true)
-        
     }
    
 }

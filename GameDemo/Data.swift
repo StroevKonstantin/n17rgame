@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-
 class Category: Object {
     dynamic var id = 0
     dynamic var name = ""
@@ -28,4 +27,6 @@ class Word: Object {
 class Team: Object {
     dynamic var team_id = 0
     dynamic var result = 0
+    dynamic var isMove:Bool = false
+    dynamic var isChangeCategory:Bool = true
 }
