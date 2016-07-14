@@ -223,8 +223,8 @@
 		08FC2A771D2B9A51003007F6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				083702571D2F80070052CFEC /* PopUpViewControllerSwift.swift */,
 				08FC2A751D2B9A4A003007F6 /* HomeViewController.swift */,
+				083702571D2F80070052CFEC /* PopUpViewControllerSwift.swift */,
 				08FC2A781D2B9DC2003007F6 /* RulesViewController.swift */,
 				08A127321D2E2847002AE55A /* ChooseTeamViewController.swift */,
 				0841F2D61D2E378300C298F2 /* ShakeMeViewController.swift */,
@@ -346,7 +346,7 @@
 				TargetAttributes = {
 					08CAEB6B1D2A5C4A0027199F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = HNEE4DC57N;
+						DevelopmentTeam = CM36WZKQA7;
 					};
 					08CAEB831D2A5C4A0027199F = {
 						CreatedOnToolsVersion = 7.3.1;
