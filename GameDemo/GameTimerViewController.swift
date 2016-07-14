@@ -15,6 +15,8 @@ class GameTimerViewController: UIViewController {
     
     var storage:Storage = Storage.sharedInstance
     
+    var arrayIndexes:[Int] = []
+    
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     var timeLeft: NSTimeInterval = Double(Storage.sharedInstance.timeForAnswer)
@@ -53,8 +55,6 @@ class GameTimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        storage.words = ["Библиотека", "Смартфон", "Розетка", "Кондиционер", "Монитор"]
         
         view.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         
@@ -103,11 +103,20 @@ class GameTimerViewController: UIViewController {
     func nextWord(){
         
         let count = storage.tasks.count
-        let index = Int(arc4random_uniform(UInt32(count))) // change to uniq!
         
-        if storage.tasks[index].category?.id == storage.currentCategory {
-            taskLbl.text = storage.tasks[index].word
+        for x in 0 ..< count*10 {
+            let rand = Int(arc4random_uniform(UInt32(count)))
+            if !arrayIndexes.contains(rand){
+                arrayIndexes.append(rand)
+                
+                if storage.tasks[rand].category?.id == storage.currentCategory {
+                    taskLbl.text = storage.tasks[rand].word
+                }
+            }
         }
+        
+        
+        
     }
     
     @IBAction func closeButtonPressed(sender: UIButton) {

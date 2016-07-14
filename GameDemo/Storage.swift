@@ -18,4 +18,6 @@ class Storage {
     var currentCategory:Int = 1
     
     var tasks:[Word] = []
+    
+    var activeTeams:[Team] = []
 }
