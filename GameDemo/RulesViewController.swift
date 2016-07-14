@@ -8,86 +8,115 @@
 
 import UIKit
 
-class RulesViewController: UIViewController, UIScrollViewDelegate {
-    @IBOutlet weak var textView: UITextView!
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    override func viewDidLoad() {
+class RulesViewController:UIPageViewController,UIPageViewControllerDataSource {
+    var pageViewController: UIPageViewController!
+    var pageTitles: NSArray!
+    var pageImages: NSArray!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
-        self.scrollView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
-        let scrollViewWidth:CGFloat = self.scrollView.frame.width
-        let scrollViewHeight:CGFloat = self.scrollView.frame.height
-        //2
-        textView.textAlignment = .Center
-        textView.text = "Sweettutos.com is your blog of choice for Mobile tutorials"
-        textView.textColor = .blackColor()
-        //self.startButton.layer.cornerRadius = 4.0
-        //3
-        let imgOne = UIImageView(frame: CGRectMake(0, 0,scrollViewWidth, scrollViewHeight))
-        imgOne.image = UIImage(named: "Slide 1")
-        let imgTwo = UIImageView(frame: CGRectMake(scrollViewWidth, 0,scrollViewWidth, scrollViewHeight))
-        imgTwo.image = UIImage(named: "Slide 2")
-        let imgThree = UIImageView(frame: CGRectMake(scrollViewWidth*2, 0,scrollViewWidth, scrollViewHeight))
-        imgThree.image = UIImage(named: "Slide 3")
-        let imgFour = UIImageView(frame: CGRectMake(scrollViewWidth*3, 0,scrollViewWidth, scrollViewHeight))
-        imgFour.image = UIImage(named: "Slide 4")
+        self.pageTitles = NSArray(objects: "В настройках вы можете задать себе нужное количество времени для одного ответа","Слова необходимо отгадывать в зависимости от выпавшей вам карты:рисованием,пантомимой или объяснением","В игре предоставлено 15 игровых категорий. Карточки определяются в случайном порядке при встряхивании телефона","Количество ходов определяется очками, указанные в карточке","Побеждает та команда которая пришла на финиш первой")
+        self.pageImages = NSArray(objects: "page1", "page2","page1","page2","page1")
         
-        self.scrollView.addSubview(imgOne)
-        self.scrollView.addSubview(imgTwo)
-        self.scrollView.addSubview(imgThree)
-        self.scrollView.addSubview(imgFour)
-        //4
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.width * 4, self.scrollView.frame.height)
-        self.scrollView.delegate = self
-        self.pageControl.currentPage = 0
+        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+        self.pageViewController.dataSource = self
         
-        // Schedule a timer to auto slide to next page
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(RulesViewController.moveToNextPage), userInfo: nil, repeats: true)
-
+        let startVC = self.viewControllerAtIndex(0) as PageContentViewController
+        let viewControllers = NSArray(object: startVC)
+        
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+        
+        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.size.height )
+        
+        self.addChildViewController(self.pageViewController)
+        self.view.addSubview(self.pageViewController.view)
+        self.pageViewController.didMoveToParentViewController(self)
+        
+        
+        
     }
-    func moveToNextPage (){
-        
-        // Move to next page
-        let pageWidth:CGFloat = CGRectGetWidth(self.scrollView.frame)
-        let maxWidth:CGFloat = pageWidth * 4
-        let contentOffset:CGFloat = self.scrollView.contentOffset.x
-        
-        var slideToX = contentOffset + pageWidth
-        
-        if  contentOffset + pageWidth == maxWidth{
-            slideToX = 0
-            // Each time you move back to the first slide, you may want to hide the button, uncomment the animation below to do so
-            //            UIView.animateWithDuration(0.5, animations: { () -> Void in
-            //                self.startButton.alpha = 0.0
-            //            })
-        }
-        self.scrollView.scrollRectToVisible(CGRectMake(slideToX, 0, pageWidth, CGRectGetHeight(self.scrollView.frame)), animated: true)
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView){
+    
+    @IBAction func restartAction(sender: AnyObject)
+    {
+        let startVC = self.viewControllerAtIndex(0) as PageContentViewController
+        let viewControllers = NSArray(object: startVC)
         
-        // Test the offset and calculate the current page after scrolling ends
-        let pageWidth:CGFloat = CGRectGetWidth(scrollView.frame)
-        let currentPage:CGFloat = floor((scrollView.contentOffset.x-pageWidth/2)/pageWidth)+1
-        // Change the indicator
-        self.pageControl.currentPage = Int(currentPage);
-        // Change the text accordingly
-        if Int(currentPage) == 0{
-            textView.text = "Sweettutos.com is your blog of choice for Mobile tutorials"
-        }else if Int(currentPage) == 1{
-            textView.text = "I write mobile tutorials mainly targeting iOS"
-        }else if Int(currentPage) == 2{
-            textView.text = "And sometimes I write games tutorials about Unity"
-        }else{
-            textView.text = "Keep visiting sweettutos.com for new coming tutorials, and don't forget to subscribe to be notified by email :)"
-            // Show the "Let's Start" button in the last slide (with a fade in animation)
-           
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
+    }
+    
+    func viewControllerAtIndex(index: Int) -> PageContentViewController
+    {
+        if ((self.pageTitles.count == 0) || (index >= self.pageTitles.count)) {
+            return PageContentViewController()
         }
-}
+        
+        let vc: PageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as! PageContentViewController
+        
+        vc.imageFile = self.pageImages[index] as! String
+        vc.titleText = self.pageTitles[index] as! String
+        vc.pageIndex = index
+        
+        return vc
+        
+        
+    }
+    
+    
+    // MARK: - Page View Controller Data Source
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
+        
+        let vc = viewController as! PageContentViewController
+        var index = vc.pageIndex as Int
+        
+        
+        if (index == 0 || index == NSNotFound)
+        {
+            return nil
+            
+        }
+        
+        index -= 1
+        return self.viewControllerAtIndex(index)
+        
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        
+        let vc = viewController as! PageContentViewController
+        var index = vc.pageIndex as Int
+        
+        if (index == NSNotFound)
+        {
+            return nil
+        }
+        
+        index += 1
+        
+        if (index == self.pageTitles.count)
+        {
+            return nil
+        }
+        
+        return self.viewControllerAtIndex(index)
+        
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return self.pageTitles.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return 0
+    }
 }

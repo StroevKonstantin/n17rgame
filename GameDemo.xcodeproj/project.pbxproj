@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0832FA831D3510C800131D33 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832FA821D3510C800131D33 /* PageContentViewController.swift */; };
 		083702581D2F80070052CFEC /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083702531D2F80070052CFEC /* PopUpViewController_iPad.xib */; };
 		083702591D2F80070052CFEC /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083702541D2F80070052CFEC /* PopUpViewController_iPhone6.xib */; };
 		0837025A1D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 083702551D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib */; };
@@ -38,6 +39,8 @@
 		B5DE60F61D33861F006052BD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60F51D33861F006052BD /* NavigationBar.swift */; };
 		B5DE60F81D338FB1006052BD /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60F71D338FB1006052BD /* SubmitButton.swift */; };
 		B5DE60FC1D33B550006052BD /* CirculLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE60FB1D33B550006052BD /* CirculLabel.swift */; };
+		B5F8266D1D359449007F3CB2 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = B5F8266C1D359449007F3CB2 /* words.json */; };
+		B5F8266F1D359CDC007F3CB2 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = B5F8266E1D359CDC007F3CB2 /* categories.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0832FA821D3510C800131D33 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		083702531D2F80070052CFEC /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		083702541D2F80070052CFEC /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
 		083702551D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		B5DE60F51D33861F006052BD /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		B5DE60F71D338FB1006052BD /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		B5DE60FB1D33B550006052BD /* CirculLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirculLabel.swift; sourceTree = "<group>"; };
+		B5F8266C1D359449007F3CB2 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		B5F8266E1D359CDC007F3CB2 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		E8A92E732CC7DE8AA41E384E /* Pods_GameDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +191,8 @@
 		08CAEB6E1D2A5C4A0027199F /* GameDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B5F8266E1D359CDC007F3CB2 /* categories.json */,
+				B5F8266C1D359449007F3CB2 /* words.json */,
 				B5DE60FA1D33AC96006052BD /* Board */,
 				0841F2DA1D2E589500C298F2 /* Model */,
 				0810043D1D2BC7530098DB5D /* View */,
@@ -222,6 +230,7 @@
 				0841F2D61D2E378300C298F2 /* ShakeMeViewController.swift */,
 				0841F2D81D2E3BCD00C298F2 /* TaskViewController.swift */,
 				083702631D2FA9E10052CFEC /* GameTimerViewController.swift */,
+				0832FA821D3510C800131D33 /* PageContentViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -337,7 +346,7 @@
 				TargetAttributes = {
 					08CAEB6B1D2A5C4A0027199F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = CM36WZKQA7;
+						DevelopmentTeam = HNEE4DC57N;
 					};
 					08CAEB831D2A5C4A0027199F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -378,6 +387,8 @@
 			files = (
 				083702581D2F80070052CFEC /* PopUpViewController_iPad.xib in Resources */,
 				08CAEB721D2A5C4A0027199F /* GameScene.sks in Resources */,
+				B5F8266D1D359449007F3CB2 /* words.json in Resources */,
+				B5F8266F1D359CDC007F3CB2 /* categories.json in Resources */,
 				08CAEB7E1D2A5C4A0027199F /* LaunchScreen.storyboard in Resources */,
 				0837025B1D2F80070052CFEC /* PopUpViewController.xib in Resources */,
 				0837025A1D2F80070052CFEC /* PopUpViewController_iPhone6Plus.xib in Resources */,
@@ -459,6 +470,7 @@
 				0837025C1D2F80070052CFEC /* PopUpViewControllerSwift.swift in Sources */,
 				B52D672D1D33B73A00ABCCDF /* Constants.swift in Sources */,
 				B52D672F1D33BED900ABCCDF /* NoButton.swift in Sources */,
+				0832FA831D3510C800131D33 /* PageContentViewController.swift in Sources */,
 				0841F2D71D2E378300C298F2 /* ShakeMeViewController.swift in Sources */,
 				083702641D2FA9E10052CFEC /* GameTimerViewController.swift in Sources */,
 				0841F2D51D2E34D800C298F2 /* DOFavoriteButton.swift in Sources */,
@@ -622,7 +634,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GameDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo1;
+				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -637,7 +649,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GameDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo1;
+				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

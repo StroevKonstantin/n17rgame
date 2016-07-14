@@ -8,6 +8,8 @@
 
 
 import UIKit
+import SwiftyJSON
+import RealmSwift
 
 class HomeViewController: UIViewController {
 
@@ -17,8 +19,96 @@ class HomeViewController: UIViewController {
     
     var popViewController : PopUpViewControllerSwift!
     
+    var storage:Storage = Storage.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let isFirstLaunch = NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch") {
+            print("Not first launch")
+            
+        } else {
+            print("First launch")
+            
+            fillDatabaseCategories()
+            fillDatabaseWords()
+            
+            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "isFirstLaunch")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+        readFromDatabase()
+    }
+    
+    func fillDatabaseCategories() {
+        
+        if let path = NSBundle.mainBundle().pathForResource("categories", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                
+                let realm = try! Realm()
+                
+                if let items = json.array {
+                    for item in items {
+                        
+                        let newCategory = Category()
+                        
+                        newCategory.id = item["id"].int!
+                        newCategory.name = item["name"].string!
+                        newCategory.annotation = item["annotation"].string!
+                        newCategory.points = item["points"].int!
+                        
+                        try! realm.write {
+                            realm.add(newCategory)
+                        }
+                    }
+                }
+//                print(Realm.Configuration.defaultConfiguration.fileURL)
+//                print(realm.objects(Category.self).filter("points < 6"))
+                
+            }
+        }
+    }
+    
+    func fillDatabaseWords(){
+        
+        if let path = NSBundle.mainBundle().pathForResource("words", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json = JSON(data: data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+                
+                let realm = try! Realm()
+                
+                if let items = json.array {
+                    for item in items {
+                        
+                        let word = Word()
+                        
+                        let currentCategory = realm.objects(Category.self).filter("id = %@", item["category_id"].int!)
+                        
+                        word.word = item["word"].string!
+                        word.category = currentCategory.first
+                        
+                        try! realm.write {
+                            realm.add(word)
+                        }
+                    }
+                }
+//                print(Realm.Configuration.defaultConfiguration.fileURL)
+//                print(realm.objects(Word.self))
+                
+            }
+        }
+    }
+    
+    func readFromDatabase(){
+        
+        let wordsArray = try! Realm().objects(Word.self)
+        for item in wordsArray {
+            storage.tasks.append(item)
+        }
+        
+        print(storage.tasks)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

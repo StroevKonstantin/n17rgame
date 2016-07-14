@@ -11,21 +11,19 @@ import RealmSwift
 
 
 class Category: Object {
-    dynamic var object_id = 0
-    dynamic var name = " "
-    dynamic var descrypt = " "
+    dynamic var id = 0
+    dynamic var name = ""
+    dynamic var annotation = ""
     dynamic var points = 0
 }
 
 // Words model
 class Word: Object {
-    dynamic var word_id = 0
+//    dynamic var id = 0
     dynamic var category :Category?
-    dynamic var priority = 0
-    dynamic var word = " "
-    
-    
+    dynamic var word = ""
 }
+
 //Team model
 class Team: Object {
     dynamic var team_id = 0

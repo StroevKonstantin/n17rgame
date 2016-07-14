@@ -19,15 +19,40 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1FAE31ABD0C3810A0B0236686A8C25D3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6218E2F8BD4FAE4247AAA253F8ABBB95</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>64EDC42A1513C516295191B05395BBC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>86AC5DB636337303E5696C09283FB370</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEA33BA29BEA363CFFE074ED18DA39E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B39FF8F958450B859587996797644594</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,6 +14,7 @@ import QuartzCore
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     
+    
     var storage:Storage = Storage.sharedInstance
    
     @IBAction func plusButtonPressed(sender: UIButton) {
@@ -32,12 +33,18 @@ import QuartzCore
         super.init(coder: aDecoder)
     }
     
+    @IBAction func closeButtonTapped(sender: UIButton) {
+        self.removeAnimate()
+        storage.timeForAnswer = Int(messageLabel.text!)!
+        
+    }
     override public init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+       
         self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
         self.popUpView.layer.cornerRadius = 15
         self.popUpView.layer.shadowOpacity = 0.8
@@ -79,5 +86,6 @@ import QuartzCore
     
     @IBAction public func closePopup(sender: AnyObject) {
         self.removeAnimate()
+        storage.timeForAnswer = Int(messageLabel.text!)!
     }
 }
