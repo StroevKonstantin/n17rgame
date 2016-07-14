@@ -634,9 +634,9 @@
                                 <exclude reference="bbt-Oc-YNJ"/>
                                 <exclude reference="eLF-8Z-Guz"/>
                                 <exclude reference="lYv-T9-kMT"/>
-                                <exclude reference="2q6-Rf-deC"/>
                                 <exclude reference="6OO-qa-8x5"/>
                                 <exclude reference="YPJ-qk-JCK"/>
+                                <exclude reference="2q6-Rf-deC"/>
                             </mask>
                         </variation>
                     </view>
@@ -746,7 +746,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F1-Wu-aBx">
                                 <rect key="frame" x="40" y="95" width="520" height="22"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>

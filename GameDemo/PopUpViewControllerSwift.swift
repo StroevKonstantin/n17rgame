@@ -35,6 +35,8 @@ import QuartzCore
     
     @IBAction func closeButtonTapped(sender: UIButton) {
         self.removeAnimate()
+        storage.timeForAnswer = Int(messageLabel.text!)!
+        
     }
     override public init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -84,5 +86,6 @@ import QuartzCore
     
     @IBAction public func closePopup(sender: AnyObject) {
         self.removeAnimate()
+        storage.timeForAnswer = Int(messageLabel.text!)!
     }
 }

@@ -17,7 +17,7 @@ class GameTimerViewController: UIViewController {
     
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
-    var timeLeft: NSTimeInterval = 30.0
+    var timeLeft: NSTimeInterval = Double(Storage.sharedInstance.timeForAnswer)
     var endTime: NSDate!
     var timeLabel =  UILabel()
     var timer = NSTimer()
@@ -73,7 +73,7 @@ class GameTimerViewController: UIViewController {
         // here you define the fromValue, toValue and duration of your animation
         strokeIt.fromValue = 0.0
         strokeIt.toValue = 1.0
-        strokeIt.duration = 30.0
+        strokeIt.duration =  Double(Storage.sharedInstance.timeForAnswer)
         // add the animation to your timeLeftShapeLayer
         
         timeLeftShapeLayer.addAnimation(strokeIt, forKey: nil)
@@ -116,7 +116,7 @@ class GameTimerViewController: UIViewController {
         let alert = UIAlertController(title: "ОСТАНОВИТЬ ИГРУ",
                                       message: " Вы желаете прекратить игру ",
                                       preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Остановить", style: UIAlertActionStyle.Default, handler: {
+        alert.addAction(UIAlertAction(title: "Главное меню", style: UIAlertActionStyle.Default, handler: {
             action in self.setupGame()
         }))
         alert.addAction(UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.Default, handler: {
@@ -125,7 +125,10 @@ class GameTimerViewController: UIViewController {
         presentViewController(alert, animated: true, completion:nil)
     }
     func setupGame(){
-     
+       // self.dismissViewControllerAnimated(true, completion: {});
+        let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
+        
+        self.navigationController?.pushViewController(f, animated: true)
         
     
     }
