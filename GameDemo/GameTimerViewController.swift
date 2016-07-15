@@ -97,6 +97,14 @@ class GameTimerViewController: UIViewController {
         } else {
             timeLabel.text = "00:00"
             timer.invalidate()
+            
+            for team in storage.activeTeams {
+                if team.isMove == true {
+                    team.isChangeCategory = false
+                }
+            }
+            
+            finishRoundForOneTeam()
         }
     }
     

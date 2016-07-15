@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
                     }
                 }
 //                print(Realm.Configuration.defaultConfiguration.fileURL)
-//                print(realm.objects(Word.self))
+                print(realm.objects(Word.self))
                 
             }
         }

@@ -35,8 +35,7 @@ class TaskViewController: UIViewController {
 
     @IBAction func startButtonPressed(sender: UIButton) {
         
-        let f:GameTimerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameTimerViewController") as! GameTimerViewController;
-        
+        let f:GameTimerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameTimerViewController") as! GameTimerViewController
         
         self.presentViewController(f, animated: true, completion: nil)
     }
