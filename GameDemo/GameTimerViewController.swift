@@ -14,11 +14,9 @@ class GameTimerViewController: UIViewController {
     @IBOutlet weak var taskLbl: UILabel!
     
     var storage:Storage = Storage.sharedInstance
-<<<<<<< HEAD
+
     
     var arrayIndexes:[Int] = []
-=======
->>>>>>>master
     
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
@@ -59,13 +57,8 @@ class GameTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< HEAD
-=======
-//        storage.words = ["Библиотека", "Смартфон", "Розетка", "Кондиционер", "Монитор"]
-        
->>>>>>>master
         view.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-        
+
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
@@ -111,8 +104,7 @@ class GameTimerViewController: UIViewController {
     func nextWord(){
         
         let count = storage.tasks.count
-<<<<<<< HEAD
-        
+
         for x in 0 ..< count*10 {
             let rand = Int(arc4random_uniform(UInt32(count)))
             if !arrayIndexes.contains(rand){
@@ -125,11 +117,7 @@ class GameTimerViewController: UIViewController {
         }
         
         
-=======let index = Int(arc4random_uniform(UInt32(count))) // change to uniq!
         
-        if storage.tasks[index].category?.id == storage.currentCategory {
-            taskLbl.text = storage.tasks[index].word
-        }
     }
     
     @IBAction func closeButtonPressed(sender: UIButton) {
@@ -149,7 +137,7 @@ class GameTimerViewController: UIViewController {
     func setupGame(){
        // self.dismissViewControllerAnimated(true, completion: {});
         let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
->>>>>>>master
+
         
         self.navigationController?.pushViewController(f, animated: true)
         

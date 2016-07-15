@@ -18,9 +18,7 @@ class Storage {
     var currentCategory:Int = 1
     
     var tasks:[Word] = []
-<<<<<<< HEAD
-    
+
     var activeTeams:[Team] = []
-=======
->>>>>>> master
+
 }
