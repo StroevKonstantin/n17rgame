@@ -14,8 +14,9 @@ class Storage {
     static let sharedInstance = Storage()
     
     var timeForAnswer:Int = 60
-    
     var currentCategory:Int = 1
-    
     var tasks:[Word] = []
+    var activeTeams:[Team] = []
+    
+    var numberOFRound:Int = 1
 }

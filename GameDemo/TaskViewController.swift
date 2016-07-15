@@ -29,16 +29,15 @@ class TaskViewController: UIViewController {
         
         let currentCategory = realm.objects(Category.self).filter("id = %@", storage.currentCategory)
         
-        print("+++++++++++++")
-        print(currentCategory)
-        
         categoryTaskLbl.text = currentCategory.first?.name
         taskDescriptionLbl.text = currentCategory.first?.annotation
     }
-    
 
     @IBAction func startButtonPressed(sender: UIButton) {
-        let f:GameTimerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameTimerViewController") as! GameTimerViewController;
+        
+        let f:GameTimerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GameTimerViewController") as! GameTimerViewController
+        
         self.presentViewController(f, animated: true, completion: nil)
     }
+    
 }

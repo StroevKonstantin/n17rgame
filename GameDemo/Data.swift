@@ -9,7 +9,6 @@
 import Foundation
 import RealmSwift
 
-
 class Category: Object {
     dynamic var id = 0
     dynamic var name = ""
@@ -17,15 +16,14 @@ class Category: Object {
     dynamic var points = 0
 }
 
-// Words model
 class Word: Object {
-//    dynamic var id = 0
     dynamic var category :Category?
     dynamic var word = ""
 }
 
-//Team model
 class Team: Object {
     dynamic var team_id = 0
     dynamic var result = 0
+    dynamic var isMove:Bool = false
+    dynamic var isChangeCategory:Bool = true
 }

@@ -392,6 +392,12 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rr-Gx-vSo">
+                                <rect key="frame" x="88" y="198" width="486" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -411,7 +417,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="shakeLabel" destination="l7P-0n-lyO" id="1DW-Rk-hi2"/>
+                        <outlet property="resultsLbl" destination="7rr-Gx-vSo" id="ndp-0s-nsT"/>
+                        <outlet property="teamMoveLbl" destination="JWs-66-awg" id="gKD-hU-uTz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Q1-G8-15Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -585,7 +592,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3M-nz-0yb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2160" y="948"/>
+            <point key="canvasLocation" x="2160" y="940"/>
         </scene>
         <!--Game Timer View Controller-->
         <scene sceneID="jBd-Lf-vKk">
@@ -712,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIN-IL-KsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1518" y="1609"/>
+            <point key="canvasLocation" x="1488" y="1600"/>
         </scene>
         <!--Page Item View Controller-->
         <scene sceneID="nWc-Lp-q5c">

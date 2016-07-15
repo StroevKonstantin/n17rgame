@@ -223,8 +223,8 @@
 		08FC2A771D2B9A51003007F6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				083702571D2F80070052CFEC /* PopUpViewControllerSwift.swift */,
 				08FC2A751D2B9A4A003007F6 /* HomeViewController.swift */,
+				083702571D2F80070052CFEC /* PopUpViewControllerSwift.swift */,
 				08FC2A781D2B9DC2003007F6 /* RulesViewController.swift */,
 				08A127321D2E2847002AE55A /* ChooseTeamViewController.swift */,
 				0841F2D61D2E378300C298F2 /* ShakeMeViewController.swift */,
@@ -634,7 +634,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GameDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo11;
+				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -649,7 +649,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GameDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo11;
+				PRODUCT_BUNDLE_IDENTIFIER = Altynai.GameDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

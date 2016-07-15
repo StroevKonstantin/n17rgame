@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import RealmSwift
 
 class GameTimerViewController: UIViewController {
     
@@ -15,12 +16,18 @@ class GameTimerViewController: UIViewController {
     
     var storage:Storage = Storage.sharedInstance
     
+    var arrayIndexes:[Int] = []
+    var index:Int = 0
+    var indexW:Int = 0
+    var filteredWords:[Word] = []
+    
     let timeLeftShapeLayer = CAShapeLayer()
     let bgShapeLayer = CAShapeLayer()
     var timeLeft: NSTimeInterval = Double(Storage.sharedInstance.timeForAnswer)
     var endTime: NSDate!
     var timeLabel =  UILabel()
     var timer = NSTimer()
+    
     // here you create your basic animation object to animate the strokeEnd
     let strokeIt = CABasicAnimation(keyPath: "strokeEnd")
     
@@ -54,13 +61,14 @@ class GameTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        storage.words = ["Библиотека", "Смартфон", "Розетка", "Кондиционер", "Монитор"]
-        
         view.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
         
         drawBgShape()
         drawTimeLeftShape()
         addTimeLabel()
+        
+        filterWordsByCategory()
+        generateRandomSequence()
         nextWord()
     }
     
@@ -73,7 +81,7 @@ class GameTimerViewController: UIViewController {
         // here you define the fromValue, toValue and duration of your animation
         strokeIt.fromValue = 0.0
         strokeIt.toValue = 1.0
-        strokeIt.duration =  Double(Storage.sharedInstance.timeForAnswer)
+        strokeIt.duration =  Double(storage.timeForAnswer)
         // add the animation to your timeLeftShapeLayer
         
         timeLeftShapeLayer.addAnimation(strokeIt, forKey: nil)
@@ -89,56 +97,149 @@ class GameTimerViewController: UIViewController {
         } else {
             timeLabel.text = "00:00"
             timer.invalidate()
+            
+            for team in storage.activeTeams {
+                if team.isMove == true {
+                    team.isChangeCategory = false
+                }
+            }
+            
+            finishRoundForOneTeam()
         }
     }
     
     @IBAction func wrongAnswerBtnPrssd(sender: AnyObject) {
         nextWord()
+        
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                team.isChangeCategory = false
+            }
+        }
     }
     
     @IBAction func rightAnswerBtnPrssed(sender: AnyObject) {
+        let realm = try! Realm()
+        let currentCategoryPoints = realm.objects(Category.self).filter("id = %@", storage.currentCategory).first?.points
+
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                team.result += currentCategoryPoints!
+                team.isChangeCategory = true
+            }
+        }
         nextWord()
+    }
+    
+    func generateRandomSequence(){
+        let count = filteredWords.count
+        
+        for x in 0 ..< count*10 {
+            let rand = Int(arc4random_uniform(UInt32(count)))
+            if !arrayIndexes.contains(rand){
+                arrayIndexes.append(rand)
+            }
+        }
+    }
+    
+    func filterWordsByCategory(){
+        for item in storage.tasks {
+//            print("\(storage.currentCategory) || \(item.category!.id)")
+            if item.category?.id == storage.currentCategory {
+                filteredWords.append(item)
+            }
+        }
+//        print(filteredWords)
     }
     
     func nextWord(){
         
-        let count = storage.tasks.count
-        let index = Int(arc4random_uniform(UInt32(count))) // change to uniq!
-        
-        if storage.tasks[index].category?.id == storage.currentCategory {
-            taskLbl.text = storage.tasks[index].word
+        if index < 3 {
+            taskLbl.text = filteredWords[arrayIndexes[index]].word
+            index += 1
+        } else {
+            finishRoundForOneTeam()
         }
     }
     
-    @IBAction func closeButtonPressed(sender: UIButton) {
+    func finishRoundForOneTeam(){
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                print(team.result)
+            }
+        }
         
+        startRoundForNextTeam()
+        
+        self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func startRoundForNextTeam() {
+        
+        for team in storage.activeTeams {
+            if team.isMove == true {
+                indexW = storage.activeTeams.indexOf(team)!
+                team.isMove = false
+            }
+        }
+
+        indexW += 1
+        
+        if indexW <= storage.activeTeams.count-1 {
+            storage.activeTeams[indexW].isMove = true
+        } else {
+            storage.numberOFRound += 1
+            indexW = 0
+            
+            for team in storage.activeTeams {
+                team.isMove = false
+            }
+            
+            storage.activeTeams.first?.isMove = true
+        }
+
+//        print(storage.activeTeams)
+    }
+    
+    @IBAction func closeButtonPressed(sender: UIButton) {
+        let seconds:Double = Double(timeLeft)
+        let state:Double = seconds/Double(storage.timeForAnswer)
+        
+        timeLabel.text = timeLeft.time
+        timer.invalidate()
 
         
+        strokeIt.fromValue = 1.0 - state
+        strokeIt.toValue = 1.0 - state
+        timeLeftShapeLayer.addAnimation(strokeIt, forKey: nil)
         
         let alert = UIAlertController(title: "ОСТАНОВИТЬ ИГРУ",
                                       message: " Вы желаете прекратить игру ",
                                       preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Главное меню", style: UIAlertActionStyle.Default, handler: {
-            action in self.setupGame()
-        }))
-        alert.addAction(UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.Default, handler: {
-            action in self.continueGame()
-        }))
+        alert.addAction(UIAlertAction(title: "Главное меню", style: UIAlertActionStyle.Default, handler: { action in self.setupGame()}))
+        alert.addAction(UIAlertAction(title: "Продолжить", style: UIAlertActionStyle.Default, handler: {action in self.continueGame()}))
         presentViewController(alert, animated: true, completion:nil)
     }
+    
     func setupGame(){
-       // self.dismissViewControllerAnimated(true, completion: {});
-        let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
-        
-        self.navigationController?.pushViewController(f, animated: true)
-        
-    
+//        let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
+//        self.navigationController?.pushViewController(f, animated: true)
     }
-    func continueGame(){
-      
     
+    func continueGame(){
+
         
+        let seconds:Double = Double(timeLeft)
+        let state:Double = seconds/Double(storage.timeForAnswer)
         
+        strokeIt.fromValue = 1.0 - state
+        strokeIt.toValue = 1.0
+        strokeIt.duration =  seconds
+        
+        timeLeftShapeLayer.addAnimation(strokeIt, forKey: nil)
+        
+        endTime = NSDate().dateByAddingTimeInterval(timeLeft)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(GameTimerViewController.updateTime), userInfo: nil, repeats: true)
     }
     
 }
