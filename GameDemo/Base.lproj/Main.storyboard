@@ -326,7 +326,7 @@
         <!--Navigation Bar-->
         <scene sceneID="VMA-FC-TuA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PSx-JR-fBB" customClass="NavigationBar" customModule="GameDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationBar" automaticallyAdjustsScrollViewInsets="NO" id="PSx-JR-fBB" customClass="NavigationBar" customModule="GameDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XCd-BE-Mrg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

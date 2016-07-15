@@ -222,8 +222,8 @@ class GameTimerViewController: UIViewController {
     }
     
     func setupGame(){
-//        let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
-//        self.navigationController?.pushViewController(f, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("NavigationBar")
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     func continueGame(){
