@@ -17,71 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="qtQ-Yv-aj8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8OZ-ft-yFc">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Dw8-gW-6zR">
-                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="1" green="0.27299535549999998" blue="0.75449483520000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="pageIndicatorTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="1" green="0.20044760819999999" blue="0.27233053779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="168" y="282" width="63" height="37"/>
-                                </variation>
-                            </pageControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CEY-u3-TfF">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="236" width="240" height="128"/>
-                                </variation>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8OZ-ft-yFc" firstAttribute="leading" secondItem="qtQ-Yv-aj8" secondAttribute="leading" id="FaG-aS-G58"/>
-                            <constraint firstAttribute="trailing" secondItem="8OZ-ft-yFc" secondAttribute="trailing" id="a3I-is-qFj"/>
-                            <constraint firstItem="dlJ-ZE-bQl" firstAttribute="top" secondItem="8OZ-ft-yFc" secondAttribute="bottom" id="i99-LL-Ldh"/>
-                            <constraint firstItem="8OZ-ft-yFc" firstAttribute="top" secondItem="qtQ-Yv-aj8" secondAttribute="top" id="tJA-EB-owY"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="8OZ-ft-yFc"/>
-                                <exclude reference="Dw8-gW-6zR"/>
-                                <exclude reference="CEY-u3-TfF"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="i99-LL-Ldh"/>
-                                <exclude reference="FaG-aS-G58"/>
-                                <exclude reference="a3I-is-qFj"/>
-                                <exclude reference="tJA-EB-owY"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="8OZ-ft-yFc"/>
-                                <include reference="Dw8-gW-6zR"/>
-                                <include reference="CEY-u3-TfF"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="i99-LL-Ldh"/>
-                                <include reference="FaG-aS-G58"/>
-                                <include reference="a3I-is-qFj"/>
-                                <include reference="tJA-EB-owY"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Qgk-cm-G3M"/>
-                    <connections>
-                        <outlet property="pageControl" destination="Dw8-gW-6zR" id="LKG-0d-Xce"/>
-                        <outlet property="scrollView" destination="8OZ-ft-yFc" id="Xrq-5F-JTG"/>
-                        <outlet property="textView" destination="CEY-u3-TfF" id="cBA-xw-KPK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y41-oM-Lxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -401,7 +339,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhc-1B-PYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-484" y="253"/>
+            <point key="canvasLocation" x="-486" y="247"/>
         </scene>
         <!--Shake Me View Controller-->
         <scene sceneID="ED3-20-hob">
@@ -775,6 +713,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIN-IL-KsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1518" y="1609"/>
+        </scene>
+        <!--Page Item View Controller-->
+        <scene sceneID="nWc-Lp-q5c">
+            <objects>
+                <viewController storyboardIdentifier="ItemController" id="gYS-hd-ZJU" customClass="PageItemViewController" customModule="GameDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f6u-fz-md3"/>
+                        <viewControllerLayoutGuide type="bottom" id="X0T-O5-va0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nUj-Ho-gCd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYi-8H-6lf">
+                                <rect key="frame" x="140" y="140" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="gYz-dw-76X"/>
+                                    <constraint firstAttribute="width" constant="320" id="iYK-fj-buh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89512310610000001" green="0.89512310610000001" blue="0.89512310610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="jYi-8H-6lf" secondAttribute="centerX" id="iDm-Ce-ZQb"/>
+                            <constraint firstAttribute="centerY" secondItem="jYi-8H-6lf" secondAttribute="centerY" id="sbH-Co-FsI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="jYi-8H-6lf" id="Qhb-LI-X0y"/>
+                        <outlet property="view" destination="nUj-Ho-gCd" id="KFJ-gQ-6hM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMC-IC-4F3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176" y="1648"/>
         </scene>
     </scenes>
     <resources>

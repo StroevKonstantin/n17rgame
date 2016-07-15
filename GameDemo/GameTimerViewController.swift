@@ -112,6 +112,8 @@ class GameTimerViewController: UIViewController {
     
     @IBAction func closeButtonPressed(sender: UIButton) {
         
+
+        
         
         let alert = UIAlertController(title: "ОСТАНОВИТЬ ИГРУ",
                                       message: " Вы желаете прекратить игру ",
@@ -133,6 +135,8 @@ class GameTimerViewController: UIViewController {
     
     }
     func continueGame(){
+    
+        
     }
     
 }

@@ -39,6 +39,899 @@
  "word": "Чарли Чаплин",
  "category_id": 2
  }
+ ,
+ {
+ "word": "бегать марафон",
+ "category_id": 3
+ },
+ {
+ "word": "лежать под капельницей",
+ "category_id": 3
+ },
+ {
+ "word": "перхоть",
+ "category_id": 3
+ },
+ {
+ "word": "переменная облачность",
+ "category_id": 3
+ },
+ {
+ "word": "сушить грибы",
+ "category_id": 3
+ }
+ ,
+ "word": "бросать курить",
+ "category_id": 3
+ },
+ {
+ "word": "сгущать краски",
+ "category_id": 3
+ },
+ {
+ "word": "курить кальян",
+ "category_id": 3
+ },
+ {
+ "word": "чокаться",
+ "category_id": 3
+ },
+ {
+ "word": "проверять почту",
+ "category_id": 3
+ },
+ {
+ "word": "кроить",
+ "category_id": 3
+ },
+ {
+ "word": "рукописи не горят",
+ "category_id": 3
+ },
+ {
+ "word": "забивать сваи",
+ "category_id": 3
+ },
+ {
+ "word": "моросит дождь",
+ "category_id": 3
+ },
+ {
+ "word": "цедить",
+ "category_id": 3
+ },
+ 
+ {
+ "word": "вытягивать из болота",
+ "category_id": 3
+ },
+ {
+ "word": "исповедоваться",
+ "category_id": 3
+ },
+ {
+ "word": "подмигивать",
+ "category_id": 3
+ },
+ {
+ "word": "зрить в корень",
+ "category_id": 3
+ },
+ {
+ "word": "идти в гору",
+ "category_id": 3
+ },
+ {
+ "word": "вбить в голову",
+ "category_id": 3
+ },
+ 
+ {
+ "word": "варить кофе",
+ "category_id": 3
+ },
+ {
+ "word": "запутывать следы",
+ "category_id": 3
+ },
+ {
+ "word": "угодить в капкан",
+ "category_id": 3
+ },
+ {
+ "word": "опылять",
+ "category_id": 3
+ },
+ {
+ "word": "блеснуть умом",
+ "category_id": 3
+ },
+ {
+ "word": "вбить в голову",
+ "category_id": 3
+ },
+ 
+ {
+ "word": "пресмыкающиеся",
+ "category_id": 3
+ },
+ {
+ "word": "сыпь",
+ "category_id": 3
+ },
+ {
+ "word": "марсианин",
+ "category_id": 3
+ },
+ {
+ "word": "синяк",
+ "category_id": 3
+ },
+ {
+ "word": "крона дерева",
+ "category_id": 3
+ },
+ {
+ "word": "ветрянка",
+ "category_id": 3
+ },
+ 
+ {
+ "word": "морская пена",
+ "category_id": 3
+ },
+ {
+ "word": "мотылек",
+ "category_id": 3
+ },
+ {
+ "word": "светлячок",
+ "category_id": 3
+ },
+ {
+ "word": "жаворонок",
+ "category_id": 3
+ },
+ {
+ "word": "тополиный пух",
+ "category_id": 3
+ },
+ {
+ "word": "стог сена",
+ "category_id": 3
+ },
+ 
+ {
+ "word": "водород",
+ "category_id": 3
+ },
+ {
+ "word": "носорог",
+ "category_id": 3
+ },
+ {
+ "word": "след тигра",
+ "category_id": 3
+ },
+ {
+ "word": "опушка леса",
+ "category_id": 3
+ },
+ {
+ "word": "нашатырь",
+ "category_id": 3
+ },
+ {
+ "word": "ушки на макушке",
+ "category_id": 3
+ },
+ 
+ {
+ "word": "маковое поле",
+ "category_id": 3
+ },
+ {
+ "word": "русло реки",
+ "category_id": 3
+ },
+ {
+ "word": "день сурка",
+ "category_id": 3
+ },
+ {
+ "word": "ехидна",
+ "category_id": 3
+ },
+ {
+ "word": "рассвет",
+ "category_id": 3
+ },
+ {
+ "word": "жидкость",
+ "category_id": 3
+ }
+ ,
+ 
+ {
+ "word": "чертить графики",
+ "category_id": 3
+ },
+ {
+ "word": "короновать",
+ "category_id": 3
+ },
+ {
+ "word": "читать газету",
+ "category_id": 3
+ },
+ {
+ "word": "выносить приговор",
+ "category_id": 3
+ },
+ {
+ "word": "бинтовать",
+ "category_id": 3
+ },
+ {
+ "word": "митинговать",
+ "category_id": 3
+ },
+ 
+ 
+ {
+ "word": "ходить на голове",
+ "category_id": 3
+ },
+ {
+ "word": "кристаллы соли",
+ "category_id": 3
+ },
+ {
+ "word": "мамонт",
+ "category_id": 3
+ },
+ {
+ "word": "сесть в лужу",
+ "category_id": 3
+ },
+ {
+ "word": "копировать",
+ "category_id": 3
+ },
+ {
+ "word": "плыть по течению",
+ "category_id": 3
+ },
+ 
+ {
+ "word": "ходить на голове",
+ "category_id": 3
+ },
+ {
+ "word": "крутить обруч",
+ "category_id": 3
+ },
+ {
+ "word": "кататься на лыжах",
+ "category_id": 3
+ },
+ {
+ "word": "звездопад",
+ "category_id": 3
+ },
+ {
+ "word": "тандем",
+ "category_id": 3
+ },
+ {
+ "word": "бабье лето",
+ "category_id": 3
+ },
+ 
+ 
+ 
+ {
+ "word": "марафон",
+ "category_id": 4
+ },
+ {
+ "word": "политик",
+ "category_id": 4
+ },
+ {
+ "word": "сенатор",
+ "category_id": 4
+ },
+ {
+ "word": "ветеран",
+ "category_id": 4
+ },
+ {
+ "word": "губернатор",
+ "category_id": 4
+ },
+ {
+ "word": "дефицит",
+ "category_id": 4
+ },
+ {
+ "word": "жара",
+ "category_id": 4
+ },
+ {
+ "word": "смотреть",
+ "category_id": 4
+ },
+ {
+ "word": "простудиться",
+ "category_id": 4
+ },
+ {
+ "word": "звонить",
+ "category_id": 4
+ },
+ {
+ "word": "предки",
+ "category_id": 4
+ },
+ {
+ "word": "гражданин",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "заповедник",
+ "category_id": 4
+ },
+ {
+ "word": "инновации",
+ "category_id": 4
+ },
+ {
+ "word": "атеист",
+ "category_id": 4
+ },
+ {
+ "word": "спартакиада",
+ "category_id": 4
+ },
+ {
+ "word": "менеджер",
+ "category_id": 4
+ },
+ {
+ "word": "крепость",
+ "category_id": 4
+ },
+ 
+ 
+ {
+ "word": "реформа",
+ "category_id": 4
+ },
+ {
+ "word": "бомж",
+ "category_id": 4
+ },
+ {
+ "word": "союзники",
+ "category_id": 4
+ },
+ {
+ "word": "карнавал",
+ "category_id": 4
+ },
+ {
+ "word": "заповеди",
+ "category_id": 4
+ },
+ {
+ "word": "кочевник",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "восстание",
+ "category_id": 4
+ },
+ {
+ "word": "фермер",
+ "category_id": 4
+ },
+ {
+ "word": "квартирант",
+ "category_id": 4
+ },
+ {
+ "word": "атаман",
+ "category_id": 4
+ },
+ {
+ "word": "богатырь",
+ "category_id": 4
+ },
+ {
+ "word": "модернизация",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "тенге",
+ "category_id": 4
+ },
+ {
+ "word": "ямщик",
+ "category_id": 4
+ },
+ {
+ "word": "прогресс",
+ "category_id": 4
+ },
+ {
+ "word": "переворот",
+ "category_id": 4
+ },
+ {
+ "word": "патриот",
+ "category_id": 4
+ },
+ {
+ "word": "дембель",
+ "category_id": 4
+ },
+ 
+ 
+ {
+ "word": "мухомор",
+ "category_id": 4
+ },
+ {
+ "word": "котенок",
+ "category_id": 4
+ },
+ {
+ "word": "воздух",
+ "category_id": 4
+ },
+ {
+ "word": "комета",
+ "category_id": 4
+ },
+ {
+ "word": "аист",
+ "category_id": 4
+ },
+ {
+ "word": "трава",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "колокольчик",
+ "category_id": 4
+ },
+ {
+ "word": "почка",
+ "category_id": 4
+ },
+ {
+ "word": "веснушки",
+ "category_id": 4
+ },
+ {
+ "word": "эхо",
+ "category_id": 4
+ },
+ {
+ "word": "почва",
+ "category_id": 4
+ },
+ {
+ "word": "гейзер",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "моль",
+ "category_id": 4
+ },
+ {
+ "word": "дог",
+ "category_id": 4
+ },
+ {
+ "word": "голос",
+ "category_id": 4
+ },
+ {
+ "word": "насекомое",
+ "category_id": 4
+ },
+ {
+ "word": "завидовать",
+ "category_id": 4
+ },
+ {
+ "word": "умываться",
+ "category_id": 4
+ },
+ {
+ "word": "паспорт",
+ "category_id": 4
+ },
+ {
+ "word": "СССР",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "валюта",
+ "category_id": 4
+ },
+ {
+ "word": "бюджет",
+ "category_id": 4
+ },
+ {
+ "word": "интеллигенция",
+ "category_id": 4
+ },
+ {
+ "word": "президент",
+ "category_id": 4
+ },
+ {
+ "word": "царь",
+ "category_id": 4
+ },
+ {
+ "word": "луна",
+ "category_id": 4
+ },
+ {
+ "word": "бревно",
+ "category_id": 4
+ },
+ {
+ "word": "земля",
+ "category_id": 4
+ },
+ 
+ 
+ {
+ "word": "кокос",
+ "category_id": 4
+ },
+ {
+ "word": "зебра",
+ "category_id": 4
+ },
+ {
+ "word": "стрекоза",
+ "category_id": 4
+ },
+ {
+ "word": "зима",
+ "category_id": 4
+ },
+ {
+ "word": "туман",
+ "category_id": 4
+ },
+ {
+ "word": "ромашка ",
+ "category_id": 4
+ },
+ {
+ "word": "верба",
+ "category_id": 4
+ },
+ {
+ "word": "жена",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "бабушка",
+ "category_id": 4
+ },
+ {
+ "word": "дискотека",
+ "category_id": 4
+ },
+ {
+ "word": "татуировка",
+ "category_id": 4
+ },
+ {
+ "word": "замораживать",
+ "category_id": 4
+ },
+ {
+ "word": "гордиться",
+ "category_id": 4
+ },
+ {
+ "word": "рак ",
+ "category_id": 4
+ },
+ {
+ "word": "кальмар",
+ "category_id": 4
+ },
+ {
+ "word": "гриб",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "крыса",
+ "category_id": 4
+ },
+ {
+ "word": "пыль",
+ "category_id": 4
+ },
+ {
+ "word": "тайга",
+ "category_id": 4
+ },
+ {
+ "word": "бамбук",
+ "category_id": 4
+ },
+ {
+ "word": "тропики",
+ "category_id": 4
+ },
+ {
+ "word": "сорняк ",
+ "category_id": 4
+ },
+ {
+ "word": "газ",
+ "category_id": 4
+ },
+ {
+ "word": "кактус",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "экватор",
+ "category_id": 4
+ },
+ {
+ "word": "планета",
+ "category_id": 4
+ },
+ {
+ "word": "подснежник",
+ "category_id": 4
+ },
+ {
+ "word": "яд",
+ "category_id": 4
+ },
+ {
+ "word": "биология",
+ "category_id": 4
+ },
+ {
+ "word": "глина ",
+ "category_id": 4
+ },
+ {
+ "word": "ветер",
+ "category_id": 4
+ },
+ {
+ "word": "айсберг",
+ "category_id": 4
+ },
+ 
+ {
+ "word": "допрашивать",
+ "category_id": 4
+ },
+ {
+ "word": "щипаться",
+ "category_id": 4
+ }
+ 
+ ,
+ 
+ {
+ "word": "котопёс",
+ "category_id": 4
+ }
+ ,
+ {
+ "word": "реинкарнация",
+ "category_id": 5
+ },
+ {
+ "word": "бодибилдинг",
+ "category_id": 5
+ },
+ {
+ "word": "телекинопроектор",
+ "category_id": 5
+ },
+ {
+ "word": "мейнстрим ",
+ "category_id": 5
+ },
+ {
+ "word": "распродажа",
+ "category_id": 5
+ },
+ {
+ "word": "телемагазин",
+ "category_id": 5
+ },
+ 
+ {
+ "word": "бюстгальтер",
+ "category_id": 5
+ },
+ 
+ {
+ "word": "вышибалы",
+ "category_id": 5
+ },
+ {
+ "word": "простоквашино",
+ "category_id": 5
+ },
+ {
+ "word": "слюнявчик",
+ "category_id": 5
+ },
+ {
+ "word": "бефстроганов ",
+ "category_id": 5
+ },
+ {
+ "word": "супермаркет",
+ "category_id": 5
+ },
+ {
+ "word": "левитация",
+ "category_id": 5
+ },
+ 
+ {
+ "word": "овощечистка",
+ "category_id": 5
+ },
+ 
+ 
+ {
+ "word": "психоаналитик",
+ "category_id": 5
+ },
+ {
+ "word": "антигравитация",
+ "category_id": 5
+ },
+ {
+ "word": "псевдонаука",
+ "category_id": 5
+ },
+ {
+ "word": "материнство ",
+ "category_id": 5
+ },
+ {
+ "word": "оплодотворение",
+ "category_id": 5
+ },
+ {
+ "word": "асимптота",
+ "category_id": 5
+ },
+ 
+ {
+ "word": "плагиатор",
+ "category_id": 5
+ },
+ 
+ 
+ {
+ "word": "турагенство",
+ "category_id": 5
+ },
+ {
+ "word": "возлюбленная",
+ "category_id": 5
+ },
+ {
+ "word": "репутация",
+ "category_id": 5
+ },
+ {
+ "word": "термоизоляция ",
+ "category_id": 5
+ },
+ {
+ "word": "кревтивщик",
+ "category_id": 5
+ },
+ {
+ "word": "самоуправление",
+ "category_id": 5
+ },
+ 
+ {
+ "word": "гипертекст",
+ "category_id": 5
+ },
+ 
+ 
+ {
+ "word": "токсикомания",
+ "category_id": 5
+ },
+ {
+ "word": "видеомагнитофон",
+ "category_id": 5
+ },
+ {
+ "word": "самородок",
+ "category_id": 5
+ },
+ {
+ "word": "моногамия ",
+ "category_id": 5
+ },
+ {
+ "word": "оптоволокно",
+ "category_id": 5
+ },
+ {
+ "word": "полицейский",
+ "category_id": 5
+ },
+ 
+ {
+ "word": "демотиватор",
+ "category_id": 5
+ },
+ 
+ 
+ {
+ "word": "мерчандайзинг",
+ "category_id": 5
+ },
+ {
+ "word": "видеомагнитофон",
+ "category_id": 5
+ },
+ {
+ "word": "самородок",
+ "category_id": 5
+ },
+ {
+ "word": "моногамия ",
+ "category_id": 5
+ },
+ {
+ "word": "оптоволокно",
+ "category_id": 5
+ },
+ {
+ "word": "полицейский",
+ "category_id": 5
+ },
+ 
+ {
+ "word": "демотиватор",
+ "category_id": 5
+ },
+ 
+ 
+ 
 ]
 
 
