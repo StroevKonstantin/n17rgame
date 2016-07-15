@@ -202,7 +202,6 @@ class GameTimerViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(sender: UIButton) {
-        
         let seconds:Double = Double(timeLeft)
         let state:Double = seconds/Double(storage.timeForAnswer)
         
@@ -223,11 +222,12 @@ class GameTimerViewController: UIViewController {
     }
     
     func setupGame(){
-//        let f:HomeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController;
-//        self.navigationController?.pushViewController(f, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle:nil).instantiateViewControllerWithIdentifier("NavigationBar")
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     func continueGame(){
+
         
         let seconds:Double = Double(timeLeft)
         let state:Double = seconds/Double(storage.timeForAnswer)

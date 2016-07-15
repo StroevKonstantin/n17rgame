@@ -9,9 +9,11 @@
 import UIKit
 
 class RulesViewController:UIPageViewController,UIPageViewControllerDataSource {
-    var pageViewController: UIPageViewController!
+    private var pageViewController: UIPageViewController!
     var pageTitles: NSArray!
     var pageImages: NSArray!
+    
+    
     
     override func viewDidLoad()
     {
@@ -34,22 +36,23 @@ class RulesViewController:UIPageViewController,UIPageViewControllerDataSource {
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
         
+        stylePageControl()
+        
         
         
     }
-    
+    private func stylePageControl() {
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = UIColor.grayColor()
+        appearance.currentPageIndicatorTintColor = UIColor.whiteColor()
+        appearance.backgroundColor = UIColor.darkGrayColor()
+           }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func restartAction(sender: AnyObject)
-    {
-        let startVC = self.viewControllerAtIndex(0) as PageContentViewController
-        let viewControllers = NSArray(object: startVC)
-        
-        self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
-    }
+ 
     
     func viewControllerAtIndex(index: Int) -> PageContentViewController
     {
