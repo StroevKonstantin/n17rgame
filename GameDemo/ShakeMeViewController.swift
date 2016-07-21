@@ -14,15 +14,12 @@ class ShakeMeViewController: UIViewController {
     
     @IBOutlet weak var teamMoveLbl: UILabel!
     
-    @IBOutlet weak var resultsLbl: UILabel!
-    
     var storage:Storage = Storage.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
     
     lazy var motionManager: CMMotionManager = {
         return CMMotionManager()
@@ -35,7 +32,7 @@ class ShakeMeViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         makeMove()
         getRandomCategory()
-        showResult()
+//        showResult()
         
         handlingShake = false
         motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.currentQueue()!) { [weak self] (motion, error) in
@@ -71,8 +68,8 @@ class ShakeMeViewController: UIViewController {
         //performSegueWithIdentifier("showShakeScreen", sender: nil)
         let f:TaskViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewController") as! TaskViewController;
         
-        self.presentViewController(f, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(f, animated: true)
+//        self.presentViewController(f, animated: true, completion: nil)
+        self.navigationController?.pushViewController(f, animated: true)
 
  
     }
@@ -98,7 +95,7 @@ class ShakeMeViewController: UIViewController {
             resultString = resultString + "\(team.team_id)/ \(team.result); "
         }
         
-        resultsLbl.text = resultString
+//        resultsLbl.text = resultString
     }
     
 }

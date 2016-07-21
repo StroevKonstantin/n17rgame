@@ -171,7 +171,15 @@ class GameTimerViewController: UIViewController {
         
         startRoundForNextTeam()
         
-        self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+        
+        let s:ShakeMeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ShakeMeViewController") as! ShakeMeViewController;
+        
+        self.navigationController?.pushViewController(s, animated: true)
+        
+//        self.dismissViewControllerAnimated(true, completion: nil)
+
+        
+//        self.view.window!.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     func startRoundForNextTeam() {
